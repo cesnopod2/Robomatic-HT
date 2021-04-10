@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <title>Robomatic HT Solution</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script>
+            $(document).ready(function()
+            {
+                $(".switch_state").click(function()
+                {
+                    var txt ="";
+                    $('.switch_state:checked').each(function()
+                    {
+                        txt+=$(this).val()+","
+                    });
+                    $('#txtvalues').val(txt);
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <h1>Switch control console</h1>
+        <h2>Robomatic HT </h2>
+        <div class ="switch">
+            <div>
+            <form method="POST">
+                {% csrf_token %}
+           
+            <label for ="slot1">Slot 1 </label>
+            <input type="checkbox" value = "switch1" class="switch_state">
+            </div>
+            
+            <div>
+                <label for ="slot2">Slot 2 </label>
+                <input type="checkbox" value = "switch2" class="switch_state">
+            </div>
+            
+            <div>
+                <label for ="slot3">Slot 3 </label>
+                <input type="checkbox"  value = "switch3" class="switch_state">
+            </div>
+
+            <div>
+                <label for ="slot4">Slot 4 </label>
+                <input type="checkbox" value = "switch3" class="switch_state" >
+            </div>
+            <br>
+
+            <input type="text" name ="switch_state" id ="txtvalues"/>
+            <br>
+
+            <button id=" button1" type="submit" value="save">Apply changes</button>
+            </form>
+            <br>
+            <img scr="logo_beztla.png" alt="Robomatic HT">
+            <div class='toggle-btn'>
+                <div class='cir'>
+
+                </div>
+            </div> 
+        </div>
+    </body>
+</html>
